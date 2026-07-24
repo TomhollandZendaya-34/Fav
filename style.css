@@ -1,0 +1,263 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#120021;
+}
+
+/* ===========================
+   COMMON PAGE
+=========================== */
+
+.page{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.page.active{
+    display:flex;
+}
+
+/* ===========================
+   INTRO PAGE
+=========================== */
+
+#intro{
+
+    background:url("assets/wallpaper.png") center center/cover no-repeat;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(25,0,45,.25),
+
+        rgba(25,0,45,.55),
+
+        rgba(25,0,45,.92)
+
+    );
+
+    backdrop-filter:blur(2px);
+
+}
+
+.intro-content{
+
+    position:relative;
+
+    z-index:5;
+
+    color:white;
+
+    text-align:center;
+
+    width:90%;
+
+}
+
+.intro-content h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.subtitle{
+
+    font-size:18px;
+
+    opacity:.95;
+
+    margin-bottom:250px;
+
+}
+
+.swipe-text{
+
+margin-top:40px;
+
+font-size:22px;
+
+font-weight:500;
+
+letter-spacing:.5px;
+
+color:white;
+
+opacity:.9;
+
+}
+
+/* ===========================
+   VIDEO PAGES
+=========================== */
+
+#video1,
+#video2{
+
+    background:black;
+
+}
+
+video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+position:absolute;
+
+bottom:90px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:30px;
+
+background:#8b5cf6;
+
+color:white;
+
+font-size:14px;
+
+font-weight:600;
+
+cursor:pointer;
+
+box-shadow:0 4px 15px rgba(139,92,246,.45);
+
+transition:all .3s ease;
+
+opacity:0;
+
+pointer-events:none;
+
+z-index:100;
+
+min-width:160px;
+
+}
+
+button:hover{
+
+background:#9d6cff;
+
+transform:translateX(-50%) scale(1.05);
+
+}
+
+.showButton{
+
+opacity:1;
+
+pointer-events:auto;
+
+animation:fadeUp .5s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translate(-50%,20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translate(-50%,0);
+
+}
+
+}
+
+button:active{
+
+    transform:translateX(-50%) scale(.96);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+.intro-content h1{
+
+font-size:34px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+margin-bottom:220px;
+
+}
+
+.swipe-box{
+
+width:300px;
+
+font-size:15px;
+
+}
+
+button{
+
+width:85%;
+
+font-size:15px;
+
+}
+
+}
