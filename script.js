@@ -1,7 +1,11 @@
 // ===========================
 // ELEMENTS
 // ===========================
+const swipeText = document.getElementById("swipeText");
 
+if (!('ontouchstart' in window)) {
+    swipeText.innerHTML = "Drag Up To Begin The Experience";
+}
 const intro = document.getElementById("intro");
 const video1 = document.getElementById("video1");
 const video2 = document.getElementById("video2");
@@ -42,15 +46,32 @@ document.addEventListener("touchend", (e) => {
 
 });
 
-// Desktop Mouse (Testing)
+// ===========================
+// Desktop Drag Support
+// ===========================
+
+let isDragging = false;
 
 document.addEventListener("mousedown", (e) => {
+
+    isDragging = true;
     startY = e.clientY;
+
 });
 
-document.addEventListener("mouseup", (e) => {
+document.addEventListener("mousemove", (e) => {
+
+    if (!isDragging) return;
 
     endY = e.clientY;
+
+});
+
+document.addEventListener("mouseup", () => {
+
+    if (!isDragging) return;
+
+    isDragging = false;
 
     if (intro.classList.contains("active")) {
 
