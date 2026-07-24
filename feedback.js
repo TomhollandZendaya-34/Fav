@@ -17,9 +17,9 @@ btn.addEventListener("click", () => {
 
     emailjs.send(
 
-        "service_1kflh76",
+        "service_4eub9b5",
 
-        "template_ya0ui7v",
+        "template_z84hfwp",
 
         {
 
