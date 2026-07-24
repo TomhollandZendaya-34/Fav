@@ -1,0 +1,316 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(180deg,#120021,#250047);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+.container{
+
+width:100%;
+
+padding:25px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.glass{
+
+width:100%;
+
+max-width:450px;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+text-align:center;
+
+}
+
+#typing{
+
+font-size:34px;
+
+line-height:1.5;
+
+min-height:120px;
+
+}
+
+#subText{
+
+margin-top:20px;
+
+opacity:.85;
+
+font-size:17px;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+background:#8b5cf6;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+display:none;
+
+}
+
+.container{
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes flyAcross{
+
+0%{
+    left:-90px;
+    top:75%;
+    transform:rotate(-10deg) scale(.8);
+}
+
+25%{
+    left:20%;
+    top:55%;
+    transform:rotate(8deg) scale(1);
+}
+
+50%{
+    left:45%;
+    top:35%;
+    transform:rotate(-8deg) scale(1.05);
+}
+
+75%{
+    left:70%;
+    top:20%;
+    transform:rotate(10deg) scale(1);
+}
+
+100%{
+    left:110%;
+    top:8%;
+    transform:rotate(20deg) scale(.9);
+}
+}
+
+.butterfly{
+    position:fixed;
+    width:55px;
+    height:auto;
+    pointer-events:none;
+    z-index:15;
+    transform-origin:center;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.25));
+}
+
+.butterfly1{
+    animation:flyOne 15s ease-in-out infinite;
+}
+
+.butterfly2{
+    animation:flyTwo 19s ease-in-out infinite;
+    animation-delay:2.5s;
+}
+
+.butterfly3{
+    animation:flyThree 17s ease-in-out infinite;
+    animation-delay:6s;
+}
+
+@keyframes flyOne{
+
+0%{
+left:-8%;
+top:80%;
+transform:scale(.8) rotate(-10deg);
+}
+
+20%{
+left:18%;
+top:62%;
+transform:scale(1) rotate(8deg);
+}
+
+40%{
+left:42%;
+top:48%;
+transform:scale(1.1) rotate(-12deg);
+}
+
+60%{
+left:60%;
+top:30%;
+transform:scale(.95) rotate(15deg);
+}
+
+80%{
+left:82%;
+top:18%;
+transform:scale(1.05) rotate(-8deg);
+}
+
+100%{
+left:108%;
+top:5%;
+transform:scale(.8) rotate(10deg);
+}
+
+}
+
+@keyframes flyTwo{
+
+0%{
+left:108%;
+top:85%;
+transform:scale(.9) rotateY(180deg);
+}
+
+25%{
+left:78%;
+top:65%;
+transform:scale(1.05) rotateY(180deg) rotate(-10deg);
+}
+
+50%{
+left:52%;
+top:42%;
+transform:scale(.95) rotateY(180deg) rotate(8deg);
+}
+
+75%{
+left:22%;
+top:22%;
+transform:scale(1.05) rotateY(180deg) rotate(-12deg);
+}
+
+100%{
+left:-10%;
+top:10%;
+transform:scale(.9) rotateY(180deg);
+}
+
+}
+
+@keyframes flyThree{
+
+0%{
+left:-10%;
+top:30%;
+transform:scale(.75);
+}
+
+20%{
+left:15%;
+top:45%;
+}
+
+40%{
+left:38%;
+top:35%;
+}
+
+60%{
+left:60%;
+top:18%;
+}
+
+80%{
+left:82%;
+top:35%;
+}
+
+100%{
+left:108%;
+top:55%;
+transform:scale(.8);
+}
+
+}
+
+@keyframes float {
+
+    0%{
+        margin-top:0;
+    }
+
+    25%{
+        margin-top:-8px;
+    }
+
+    50%{
+        margin-top:5px;
+    }
+
+    75%{
+        margin-top:-5px;
+    }
+
+    100%{
+        margin-top:0;
+    }
+
+}
+
+.butterfly1{
+    animation:
+        flyOne 15s ease-in-out infinite,
+        float 2.8s ease-in-out infinite;
+}
+
+.butterfly2{
+    animation:
+        flyTwo 19s ease-in-out infinite,
+        float 3.5s ease-in-out infinite;
+    animation-delay:2.5s,0s;
+}
+
+.butterfly3{
+    animation:
+        flyThree 17s ease-in-out infinite,
+        float 2.3s ease-in-out infinite;
+    animation-delay:6s,0s;
+}
